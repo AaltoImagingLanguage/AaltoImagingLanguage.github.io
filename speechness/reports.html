@@ -91,6 +91,13 @@ Semantic decoding of environmental sounds (at 650–700 ms) had strongest contri
 <p>Figure: Decoding results for spoken word acoustics with the MPS regression model (left), spectrogram convolution model (center), and the phoneme content of spoken words with the convolution model (right). Each thin line represents the decoding performance in one participant and the thick line the grand average over 16 participants. The grey solid line denotes chance level performance (50%).
 </p>		   
 
+<h1>Logistic regression does not improve decoding of categorical phoneme features</h1>
+<p>The phoneme sequence was predicted based on the brain responses with the same linear regression model as spectrogram and amplitude envelope, which are continuous variables.  However, each phoneme sequence is a categorical variable, which is why we wanted to investigate  whether the use of a logistic model improves the decoding accuracy of phonemes. To do this, a  linear classification model with a logistic regression learner was used. The model composes the  objective function for minimization from the sum of the average loss function and the regularization term. The model uses Ridge as a regularization method. Minimization of the cross-validation error  of the fit was done by varying the regularization strength parameter lambda. To determine a good  penalty strength for the best possible fit, 5-fold cross-validation was implemented. The model was trained separately for each subject in the same way as in the case of the linear  model. After training, the model was tested for unseen data, and the resulting accuracy over all  cross-validation tests for different lag windows was averaged across all subjects. The best predictive accuracy for decoding phoneme sequence of spoken words was reached with a lag of 100–180 ms also in case of the logistic model. However, the logistic model does not appear to outperform the linear model for any lag window.
+</p>
+<img src="Log&lin.jpg" width="800">	
+<p>Figure: Decoding results for the phoneme content of spoken words with the linear and logistic regression, at different lags between a time point in the stimulus and a time window in the MEG response (average across all 16 participants +/- SEM).
+</p>
+			    
  </div>
 	        <!-- /#page-content-wrapper -->
 	
